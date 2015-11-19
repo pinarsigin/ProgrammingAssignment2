@@ -1,7 +1,9 @@
 ## To make matrix inversion faster, this function not only solves (takes inverse)
 ## but also caches the result of an inversion.
 
-## Write a short comment describing this function
+## Returns a special list to keep toBeInvertedMatrix and cache of its inverse.
+## There are getter and setter methods for the toBeInvertedMatrix itself and
+## also it contains getter and setter methods for cached inverse.
 makeCacheMatrix <- function(x = matrix()) {
         soln <- NULL
         set <- function(y) {
@@ -16,7 +18,8 @@ makeCacheMatrix <- function(x = matrix()) {
              getSolve = getSolve)  
 }
 
-## Write a short comment describing this function
+## Returns the inverse of its argument, from cache if possible,
+## by matrix inversion if not possible.
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
         myInverse <- x$getSolve()
